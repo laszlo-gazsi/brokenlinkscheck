@@ -1,0 +1,102 @@
+body {
+	font-family: "Trebuchet MS", Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 0.85em;
+	line-height: 1.6em;
+	background-color: #D1D1D1;
+}
+
+#wrapper
+{
+	width: 90%;
+	margin: auto;
+}
+
+#navigation_bar
+{
+	width: 100%;
+	background-color: #151515;
+	color: #FFFFFF;
+	font-size: 1.15em;
+	margin-top: 0px;
+	margin-bottom: 60px;
+}
+
+a {
+	color: #FFFFFF;
+}
+
+#link_filter
+{
+	margin-bottom: 30px;
+}
+
+.task_item {
+	width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-bottom: 7px;
+    border: 1px solid #000000;
+}
+
+.finished {
+    background-color: #151515;
+}
+
+.in_progress {
+    background-color: #555555;
+}
+
+.ok {
+    background-color: #151515;
+}
+
+.warning {
+    background-color: #F7CA14;
+    color: #000000;
+}
+
+.unchecked {
+    background-color: #555555;
+}
+
+.broken {
+    background-color: #FF0000;
+}
+
+.taskName {
+    padding-left: 5px;
+}
+
+.deleteButton, .httpResponse {
+    position : absolute;
+    right: 5px;
+    color: #FFFFFF;
+}
+
+#tasksList {
+	width: 100%;
+	list-style: none;
+	position: relative;
+	left: -40px;
+}
+
+#previous, #next, #new_task_submit {
+	width: 200px;
+	background-color: #151515;
+	padding: 5px;
+	border: 0px;
+	color: #FFFFFF;
+}
+
+#previous {
+	float: left;
+}
+
+#next {
+	float: right;
+}
+
+.task_item a {
+	color: #FFFFFF;
+	font-size: 1em;		
+}

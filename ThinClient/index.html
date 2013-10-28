@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BrokenLinksCheck</title>
+		<link rel="icon" href="/resources/images/favicon.ico" type="image/x-icon"/>
+
+		<link rel="stylesheet" href="/resources/css/brokenlinkscheck.css" media="screen">
+		<link rel="stylesheet" href="/resources/css/superfish.css" media="screen">
+		<link rel="stylesheet" href="/resources/css/jquery-ui-1.10.1.custom.css" media="screen">
+		<link rel="stylesheet" href="/resources/css/colorbox.css" media="screen">
+
+		<!-- libraries, mostly jQuery and jQuery plugins -->
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+		<script src="/lib/superfish.js"></script> <!-- menu -->
+		<script src="/lib/jquery.colorbox-min.js"></script> <!-- menu -->
+
+		<script src="/control/utils/Dialog.js"></script>
+		<script src="/control/utils/UseCase.js"></script>
+
+		<!-- ApplicationContext -->
+		<script src="/control/ApplicationContext.js"></script>
+
+		<!-- SOAP -->
+		<script src="/control/soap/RequestBuilder.class.js"></script>
+		<script src="/control/soap/WebService.class.js"></script>
+
+		<!-- Listeners -->
+		<script src="/control/Listeners.js"></script>
+
+		<!-- main controller -->
+		<script src="/control/Controller.js"></script>
+
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header">
+				<ul class="sf-menu" id="navigation_bar">
+					<li>
+						<a href="/"><b>BrokenLinksCheck</b></a>
+					</li>
+					<li>
+						<a href="Javascript:void(0)">Server</a>
+						<ul>
+							<li>
+								<a id="ping_server" href="Javascript:void(0)">Ping</a>
+							</li>
+							<li>
+								<a id="stop_server" href="Javascript:void(0)">Stop</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a id="list_all_tasks" href="Javascript:void(0)">Tasks</a>
+                        <ul>
+                            <li>
+                                <a id="new_task" href="#new_task_content">New</a>
+                            </li>
+                        </ul>
+					</li>
+				</ul>
+			</div><!-- end of header -->
+			<div id="content">
+
+				<div id="taskFilter" style="text-align: right; display: none;">
+					<input type="radio" id="all_tasks" name="task_filter" checked="checked">
+					<label for="all_tasks">All Tasks</label>
+					<input type="radio" id="finished_tasks" name="task_filter">
+					<label for="finished_tasks">Finished Tasks</label>
+					<input type="radio" id="in_progress_tasks" name="task_filter">
+					<label for="in_progress_tasks">In Progress</label>
+				</div>
+				
+				<div id="linkFilter" style="text-align: right; display: none;">
+					<input type="radio" id="all_links" name="link_filter" checked="checked">
+					<label for="all_links">All Links</label>
+					<input type="radio" id="broken_links" name="link_filter">
+					<label for="broken_links">Broken Links</label>
+				</div>
+
+				<h2 id="useCaseTitle">Broken Links</h2>
+
+				<div id="useCaseContent">
+				</div>
+				
+				<div id="listNavigation">
+					<button id="previous">Previous</button>
+					<button id="next">Next</button>
+				</div>
+			</div><!-- end of content -->
+		</div>
+		<!-- Used for creating dialogs with jQuery -->
+		<div id="dialog" title="Dialog">
+			<p id="dialog_text"></p>
+		</div>
+
+        <!-- new Task window content -->
+        <div style="display:none; background-color: #d1d1d1;">
+            <div id="new_task_content" style="padding: 20px; text-align: center">
+                <table style="text-align: left;">
+                    <tr>
+                        <td>Domain name:</td>
+                        <td><input id="domain_text_box" type="text" value="http://"/></td>
+                    </tr>
+                    <tr>
+                        <td>Fast mode:</td>
+                        <td><input id="fast_mode_checkbox" checked="checked" type="checkbox"/></td>
+                    </tr>
+                </table>
+                <p><button style="margin-top: 20px;" id="new_task_submit">Create</button></p>
+            </div>
+        </div>
+	</body>
+</html>
